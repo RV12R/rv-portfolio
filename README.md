@@ -1,8 +1,6 @@
-# Rahul AV — Personal Portfolio
+# RV — Personal Portfolio
 
 A minimalist, dark, cyberpunk-themed portfolio website for **Rahul AV**, Full Stack Engineer & Web3 Security Researcher.
-
-![Portfolio Preview](./public/preview.png) *(Add a screenshot here later)*
 
 ## 🚀 Tech Stack
 
@@ -85,4 +83,4 @@ Deployment is completely automated via Vercel:
 - Email: [itsrahulav@gmail.com](mailto:itsrahulav@gmail.com)
 
 ---
-*Designed and built by Rahul AV.*
+*Designed and built by RV.*
