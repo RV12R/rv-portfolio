@@ -540,15 +540,11 @@ img { max-width: 100%; display: block; }
   background: var(--bg-card);
   border: 1px solid var(--border);
   border-radius: 12px;
-  padding: 32px;
+  padding: 40px;
   margin-bottom: 40px;
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
-  display: grid;
-  grid-template-columns: 1fr 400px;
-  gap: 32px;
-  align-items: center;
 }
 .project-featured::before {
   content: '';
@@ -560,11 +556,13 @@ img { max-width: 100%; display: block; }
   background: linear-gradient(90deg, transparent, var(--green), transparent);
 }
 .project-featured:hover {
-  border-color: var(--green);
+  border-color: var(--border-hover);
   box-shadow: var(--glow);
 }
 .project-featured-content {
+  position: relative;
   z-index: 2;
+  max-width: 60%;
 }
 .project-label {
   font-family: var(--font-mono);
@@ -573,11 +571,11 @@ img { max-width: 100%; display: block; }
   text-shadow: var(--glow-text);
   text-transform: uppercase;
   letter-spacing: 2px;
-  margin-bottom: 12px;
+  margin-bottom: 8px;
   display: block;
 }
 .project-featured-content h3 {
-  font-size: 2rem;
+  font-size: 1.8rem;
   font-weight: 700;
   margin-bottom: 16px;
   color: #fff;
@@ -585,21 +583,27 @@ img { max-width: 100%; display: block; }
 .project-featured-desc p {
   color: var(--text-secondary);
   font-size: 0.95rem;
-  margin-bottom: 24px;
-  line-height: 1.6;
+  margin-bottom: 20px;
 }
 .project-featured-img {
-  width: 100%;
-  aspect-ratio: 16/9;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 400px;
+  height: 225px; /* Perfect 16:9 for 400px width */
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid var(--border);
   box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
+  z-index: 1;
+  opacity: 0.2;
 }
 .project-featured:hover .project-featured-img {
+  opacity: 0.8;
   border-color: var(--green);
-  transform: scale(1.02);
+  transform: translateY(-50%) scale(1.05);
 }
 .project-featured-img img {
   width: 100%;
@@ -609,9 +613,21 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 1024px) {
-  .project-featured {
-    grid-template-columns: 1fr;
-    padding: 24px;
+  .project-featured-content {
+    max-width: 100%;
+  }
+  .project-featured-img {
+    position: relative;
+    right: 0;
+    top: 0;
+    transform: none;
+    width: 100%;
+    margin-top: 20px;
+    opacity: 1;
+    z-index: 1;
+  }
+  .project-featured:hover .project-featured-img {
+    transform: scale(1.02);
   }
 }
 
